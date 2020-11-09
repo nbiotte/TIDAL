@@ -14,11 +14,11 @@ class ListController{
         $twig = new \Twig\Environment($loader);
 
         $service = new MarketService();
-        $result = $service->getProducts();
+        $result = $service->getProducts(['id', 'name'], ["id = 2", "name LIKE \"%Module%\""]);
 
         // the template path is the relative file path from `templates/`
         $twig->display('list.html.twig', [
-            'user_first_name' => $result,
+            'result' => $result,
             'notifications' => "notification",
         ]);
     }

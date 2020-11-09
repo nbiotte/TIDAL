@@ -1,7 +1,7 @@
 <?php
 
 use src\controllers\ListController;
-use repositories\ProductRepository;
+use src\repositories\ProductRepository;
 
 session_start();
 
@@ -15,5 +15,5 @@ require_once('./repositories/ProductRepository.php');
 
 
 new ListController();
-//(new ProductRepository())->getProducts();
+//(new ProductRepository())->test();
 //echo("Ça marche !!!");
