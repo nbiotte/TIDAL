@@ -9,19 +9,11 @@ ini_set('diplay_errors', 1);
 ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
 
-require('../vendor/autoload.php');
-require('./controllers/ListController.php');
-require('./repositories/ProductRepository.php');
+require_once('../vendor/autoload.php');
+require_once('./controllers/ListController.php');
+require_once('./repositories/ProductRepository.php');
 
-/*try {
-    $bdd = new PDO("mysql:host=localhost;dbname=webapp", "debian-sys-maint",  "aR7RIRZbiUZw3dYk");
-    $bdd->query("SET NAMES UTF8");
-} catch (Exception $e) {
-    echo "Problème de connexion à la base de donnée !";
-    die();
-}*/
 
-//new ListController();
-(new ProductRepository())->getProduct();
-
+new ListController();
+//(new ProductRepository())->getProducts();
 //echo("Ça marche !!!");

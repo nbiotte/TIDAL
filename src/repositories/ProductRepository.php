@@ -1,20 +1,19 @@
 <?php
 
-namespace repositories;
+namespace src\repositories;
 
 use \PDO;
 
-require(__DIR__ ."/Repository.php");
+require_once(__DIR__ ."/Repository.php");
 
 class ProductRepository extends Repository{
 
-    public function getProduct(){
-        //$pdo = $this->getPDO();
+    public function getProducts(){
         $sql = 'SELECT * FROM Products';
         $sth = self::$pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $sth->execute();
         $resultat = $sth->fetchAll();
-        print_r($resultat);
+        return $resultat;
     }
 }
 

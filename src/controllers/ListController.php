@@ -2,6 +2,10 @@
 
 namespace src\controllers;
 
+require_once(__DIR__.'/../services/MarketService.php');
+
+use src\services\MarketService;
+
 class ListController{
 
     public function __construct(){
@@ -9,12 +13,12 @@ class ListController{
         $loader = new \Twig\Loader\FilesystemLoader(__DIR__ .'/../views/template');
         $twig = new \Twig\Environment($loader);
 
+        $service = new MarketService();
+        $result = $service->getProducts();
+
         // the template path is the relative file path from `templates/`
-        $twig->display('base.html.twig', [
-            // this array defines the variables passed to the template,
-            // where the key is the variable name and the value is the variable value
-            // (Twig recommends using snake_case variable names: 'foo_bar' instead of 'fooBar')
-            'user_first_name' => "user firstname",
+        $twig->display('list.html.twig', [
+            'user_first_name' => $result,
             'notifications' => "notification",
         ]);
     }
