@@ -41,8 +41,9 @@ class Repository{
      *
      * @return string SQL request
      */
-    private function select($columns){
-        $sql = 'SELECT '. implode(', ',$columns);
+    private function select($columns=null){
+        if(isset($columns)) $sql = 'SELECT '. implode(', ',$columns);
+        else $sql = 'SELECT *';
         return $sql;
     }
 
@@ -78,11 +79,11 @@ class Repository{
      *
      * @return string result of the SQL request
      */
-    protected function request($table, $columns, $conditions=null){
+    protected function request($table, $columns=null, $conditions=null){
         $sql = $this->select($columns);
         $sql = $sql. " FROM ".$table;
         if (isset($conditions)) $sql = $this->where($sql, $conditions); 
-
+        print_r($sql);
         $sth = self::$pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $sth->execute();
         $resultat = $sth->fetchAll();

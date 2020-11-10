@@ -34,8 +34,22 @@ class MarketService extends Service{
      *
      * @return string result of the SQL request
      */
-    public function getProducts($columns, $conditions=null){
+    public function getProducts($columns=null, $conditions=null){
         return $this->productRepository->getProducts($columns, $conditions);
+    }
+
+    /**
+     * getBasket.
+     *
+     * Function that allows to get basket list in the DB.
+     * 
+     * @param array                                 $columns
+     * @param array                                 $conditions
+     *
+     * @return string result of the SQL request
+     */
+    public function getBasket($columns=null, $conditions=null){
+        return $this->basketRepository->getBasket($columns, $conditions);
     }
 }
 

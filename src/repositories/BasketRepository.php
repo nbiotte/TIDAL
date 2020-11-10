@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductRepository.php.
+ * BasketRepository.php.
  *
  * @author BIOTTE Nathan
  *
@@ -13,25 +13,25 @@ namespace src\repositories;
 require_once(__DIR__ ."/Repository.php");
 
 /**
- * ProductRepository.
+ * BasketRepository.
  *
- * This class allows exchanges with the table products.
+ * This class allows exchanges with the table basket.
  * 
  */
-class ProductRepository extends Repository{
+class BasketRepository extends Repository{
 
     /**
-     * getProducts.
+     * getBasket.
      *
-     * Function that allows to get products list in the DB.
+     * Function that allows to get basket list in the DB.
      * 
      * @param array                                 $columns
      * @param array                                 $conditions
      *
      * @return string result of the SQL request
      */
-    public function getProducts($columns=null, $conditions=null){
-        return ($this->request('products', $columns, $conditions));
+    public function getBasket($columns=null, $conditions=null){
+        return ($this->request('basket', $columns, $conditions));
     }
 }
 
