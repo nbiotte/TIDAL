@@ -14,12 +14,12 @@ class ListController{
         $twig = new \Twig\Environment($loader);
 
         $service = new MarketService();
-        $list = $service->getProducts();
+        $products = $service->getProducts();
         //$result = $service->getBasket();
 
         // the template path is the relative file path from `templates/`
         $twig->display('list.html.twig', [
-            'list' => $list,
+            'products' => $products,
             'notifications' => "notification",
         ]);
     }

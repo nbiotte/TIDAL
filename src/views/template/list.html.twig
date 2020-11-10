@@ -1,5 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-        <p>{{ list[0][0] }}</p>
+        {% block filtre %}
+                <input type="range" min="0" max="100" value="100" id="filter_price">
+                <button id="filtre_accept">
+                    Appliquer
+                </button>
+        {% endblock %}
+        {% block list %}
+                {% for product in products %}
+                        <div>
+                                {{ product[1] }}<br>
+                                {{ product[2] }}<br> 
+                                {{ product[3] }}€<br> 
+                                <select id="basket_numberproduct">
+                                        <option value="">Nombre voulu d'article</option>
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                        <option value=4>4</option>
+                                        <option value=5>5</option>
+                                </select>
+                                <br>
+                                <button name="basket_add">
+                                        Ajouter au panier
+                                </button>
+                        </div>
+                {% endfor %}
+        {% endblock %}
 {% endblock %}
