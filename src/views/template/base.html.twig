@@ -1,22 +1,47 @@
 {#template/base.html.twig #}
+    <link rel="stylesheet" type="text/css" href="/views/public/css/style.css">
+    <script type="text/javascript" src="/views/public/js/main.js"></script>
 
-{% block header %}
-    <a class = \"menu-item\" href=\"../Accueil/index.html\">
-        <div class=\"menu-item-div\" id=\"Accueil\" >Accueil</div>
-    </a>
-    <a class = \"menu-item\" href=\"../Recapitulatif/index.html\">
-        <div class=\"menu-item-div\" id=\"Recapitulatif\" >Récapitulatif</div>
-    </a>
-    <a class = \"menu-item\" href=\"../Contact/index.html\">
-        <div class=\"menu-item-div\" id=\"Connexion\" >Connexion</div>
-    </a>
+{% block name %}
+     <title>Accueil</title>
 {% endblock %}
 
-{% block content %}
-    test
+
+{% block header %}
+    <div class="grid-container">
+        <div id="item-header">    
+            <a class = \"menu-item\" href=\"../Accueil/index.html\">
+                <div class=\"menu-item-div\" id="Accueil" >Accueil</div>
+            </a>
+            <a class = \"menu-item\" href="../Recapitulatif/index.html\">
+                <div class=\"menu-item-div\" id="Recapitulatif" >Récapitulatif</div>
+            </a>
+            <a class = \"menu-item\" href="../controllers/LoginController.php">
+                <div class=\"menu-item-div\" id="Connexion" >Connexion</div>
+            </a>
+        </div>
+{% endblock %}
+
+
+
+ {% if app.user %}
+    <p> logged</p>
+ {% else %}
+    <p>not logged </p>
+ {% endif %}
+
+{% block body %}
+    <div id="item-main">
+        {% block content %}
+
+        {% endblock %}
+    </div>
 {% endblock %}
 
 {% block footer %}
-    <p>BIOTTE Nathan</p>
-    <p>GUINGAND Jules</p>
+    <div id="item-footer">
+        <p>BIOTTE Nathan</p>
+        <p>GUINGAND Jules</p>
+    </div>
 {% endblock %}
+
