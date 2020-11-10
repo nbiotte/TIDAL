@@ -2,9 +2,7 @@
 
 namespace src\controllers;
 
-require_once(__DIR__.'/../services/MarketService.php');
-
-use src\services\MarketService;
+use src\services\ConnexionService;
 
 class LoginController{
 
@@ -13,18 +11,23 @@ class LoginController{
         $loader = new \Twig\Loader\FilesystemLoader(__DIR__ .'/../views/template');
         $twig = new \Twig\Environment($loader);
 
-
+        if(!empty($_POST)) $this->login();
 
         // the template path is the relative file path from `templates/`
         $twig->display('login.html.twig', [
             'test' => 'test',
             'notifications' => "notification",
         ]);
+        
     }
 
-    public function login()
+
+    private function login()
     {
-        echo "hello";
+        $data = $_POST;
+        $connexionService = new ConnexionService();
+        $customer = $connexionService->getCustomer(['id'], ["username = '".$data['username']."'"]);
+        if (!empty($customer)) print_r($customer[0][0]);
     }
 }
 
