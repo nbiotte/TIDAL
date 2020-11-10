@@ -89,7 +89,6 @@ class Repository{
         
         $sth->execute();
         $resultat = $sth->fetchAll();
-        //print_r($resultat);
         return $resultat;
     }
 

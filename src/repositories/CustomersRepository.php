@@ -21,7 +21,7 @@ class CustomersRepository extends Repository{
     /**
      * getCustomer.
      *
-     * Function that allows to get basket list in the DB.
+     * Function that allows to get the customer who tries to connect.
      * 
      * @param array                                 $columns
      * @param array                                 $conditions

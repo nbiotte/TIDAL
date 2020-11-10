@@ -18,7 +18,7 @@ class LoginController{
             'test' => 'test',
             'notifications' => "notification",
         ]);
-        
+
     }
 
 
@@ -27,7 +27,7 @@ class LoginController{
         $data = $_POST;
         $connexionService = new ConnexionService();
         $customer = $connexionService->getCustomer(['id'], ["username = '".$data['username']."'"]);
-        if (!empty($customer)) print_r($customer[0][0]);
+        if (!empty($customer)) $_SESSION["id"]=$customer[0][0];
     }
 }
 

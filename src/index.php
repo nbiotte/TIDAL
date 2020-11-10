@@ -15,3 +15,5 @@ require_once('../vendor/autoload.php');
 
 if(!isset($_GET['page'])) new ListController();
 elseif ($_GET['page']==='connexion') new LoginController();
+
+?>

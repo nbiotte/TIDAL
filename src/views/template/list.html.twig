@@ -2,10 +2,10 @@
 
 {% block content %}
         {% block filtre %}
-                <input type="range" min="0" max="100" value="100" id="filter_price">
-                <button id="filtre_accept">
-                    Appliquer
-                </button>
+                <form method="POST">
+                        <input type="range" name ="slider" min="0" max="100" value= {{ slider_filter }} id="filter_slider"><br>
+                        <input type="submit" value="Appliquer" />
+                </form>
         {% endblock %}
         {% block list %}
                 {% for product in products %}
