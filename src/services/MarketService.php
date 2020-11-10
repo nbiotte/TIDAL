@@ -8,8 +8,6 @@
  */
 namespace src\services;
 
-require_once(__DIR__.'/Service.php');
-
 use src\services\Service;
 
 /**
@@ -35,7 +33,7 @@ class MarketService extends Service{
      * @return string result of the SQL request
      */
     public function getProducts($columns=null, $conditions=null){
-        return $this->productRepository->getProducts($columns, $conditions);
+        return $this->productsRepository->getProducts($columns, $conditions);
     }
 
     /**

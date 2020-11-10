@@ -83,7 +83,7 @@ class Repository{
         $sql = $this->select($columns);
         $sql = $sql. " FROM ".$table;
         if (isset($conditions)) $sql = $this->where($sql, $conditions); 
-        print_r($sql);
+        //print_r($sql);
         $sth = self::$pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $sth->execute();
         $resultat = $sth->fetchAll();

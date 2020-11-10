@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductRepository.php.
+ * ProductsRepository.php.
  *
  * @author BIOTTE Nathan
  *
@@ -10,15 +10,13 @@
 
 namespace src\repositories;
 
-require_once(__DIR__ ."/Repository.php");
-
 /**
- * ProductRepository.
+ * ProductsRepository.
  *
  * This class allows exchanges with the table products.
  * 
  */
-class ProductRepository extends Repository{
+class ProductsRepository extends Repository{
 
     /**
      * getProducts.

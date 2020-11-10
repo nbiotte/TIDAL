@@ -2,7 +2,7 @@
 
 namespace src\controllers;
 
-require_once(__DIR__.'/../services/MarketService.php');
+
 
 use src\services\MarketService;
 

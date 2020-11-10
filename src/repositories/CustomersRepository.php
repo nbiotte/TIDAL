@@ -1,6 +1,6 @@
 <?php
 /**
- * BasketRepository.php.
+ * CustomerRepository.php.
  *
  * @author BIOTTE Nathan
  *
@@ -11,15 +11,15 @@
 namespace src\repositories;
 
 /**
- * BasketRepository.
+ * CustomersRepository.
  *
- * This class allows exchanges with the table basket.
+ * This class allows exchanges with the table customers.
  * 
  */
-class BasketRepository extends Repository{
+class CustomersRepository extends Repository{
 
     /**
-     * getBasket.
+     * getCustomer.
      *
      * Function that allows to get basket list in the DB.
      * 
@@ -28,8 +28,8 @@ class BasketRepository extends Repository{
      *
      * @return string result of the SQL request
      */
-    public function getBasket($columns=null, $conditions=null){
-        return ($this->request('basket', $columns, $conditions));
+    public function getCustomer($columns=null, $conditions=null){
+        return ($this->request('customers', $columns, $conditions));
     }
 }
 

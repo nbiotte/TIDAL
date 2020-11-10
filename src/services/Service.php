@@ -8,11 +8,10 @@
  */
 namespace src\services;
 
-require_once(__DIR__.'/../repositories/ProductRepository.php');
-require_once(__DIR__.'/../repositories/BasketRepository.php');
 
-use src\repositories\ProductRepository;
+use src\repositories\ProductsRepository;
 use src\repositories\BasketRepository;
+use src\repositories\CustomersRepository;
 
 /**
  * Service.
@@ -22,12 +21,14 @@ use src\repositories\BasketRepository;
  */
 class Service{
 
-    protected ProductRepository $productRepository;
+    protected ProductsRepository $productsRepository;
     protected BasketRepository $basketRepository;
+    protected CustomersRepository $customersRepository;
 
     public function __construct(){
-        if(!isset($this->productRepository)) $this->productRepository = new ProductRepository();
+        if(!isset($this->productsRepository)) $this->productsRepository = new ProductsRepository();
         if(!isset($this->basketRepository)) $this->basketRepository = new BasketRepository();
+        if(!isset($this->customersRepository)) $this->customersRepository = new CustomersRepository();
     }
 
 }
