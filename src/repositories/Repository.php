@@ -26,6 +26,7 @@ class Repository{
         if(!isset(self::$pdo)) {
             try{
                 self::$pdo = new PDO("mysql:host=localhost;dbname=webapp", "debian-sys-maint",  "aR7RIRZbiUZw3dYk");
+                self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (Exception $e) {
                 echo("Problème de connexion à la base de donnée !");
             }
@@ -85,8 +86,10 @@ class Repository{
         if (isset($conditions)) $sql = $this->where($sql, $conditions); 
         //print_r($sql);
         $sth = self::$pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+        
         $sth->execute();
         $resultat = $sth->fetchAll();
+        //print_r($resultat);
         return $resultat;
     }
 
