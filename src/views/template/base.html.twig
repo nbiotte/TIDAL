@@ -1,6 +1,6 @@
 {#template/base.html.twig #}
     <link rel="stylesheet" type="text/css" href="/views/public/css/style.css">
-    <script type="text/javascript" src="/views/public/js/main.js"></script>
+    <script src="/views/public/js/main.js"></script>
 
 {% block name %}
      <title>Accueil</title>
@@ -13,22 +13,24 @@
             <a class = \"menu-item\" href="/">
                 <div class=\"menu-item-div\" id="Accueil" >Accueil</div>
             </a>
-            <a class = \"menu-item\" href="../Recapitulatif/index.html\">
-                <div class=\"menu-item-div\" id="Recapitulatif" >Récapitulatif</div>
-            </a>
-            <a class = \"menu-item\" href="/?page=connexion">
-                <div class=\"menu-item-div\" id="Connexion" >Connexion</div>
-            </a>
+            {% if customerId != 0 %}
+                <a class = \"menu-item\" href="../Recapitulatif/index.html\">
+                    <div class=\"menu-item-div\" id="Recapitulatif" >Récapitulatif</div>
+                </a>
+                <a class = \"menu-item\" href="/?page=deconnexion">
+                    <div class=\"menu-item-div\" id="Accueil" >Deconnexion</div>
+                </a>
+            {% else %}
+                <a class = \"menu-item\" href="/?page=connexion">
+                    <div class=\"menu-item-div\" id="Connexion" >Connexion</div>
+                </a>
+            {% endif %}
         </div>
 {% endblock %}
 
 
 
- {% if app.user %}
-    <p> logged</p>
- {% else %}
-    <p>not logged </p>
- {% endif %}
+
 
 {% block body %}
     <div id="item-main">
@@ -43,5 +45,10 @@
         <p>BIOTTE Nathan</p>
         <p>GUINGAND Jules</p>
     </div>
+     {% if customerId != 0 %}
+        <p> logged</p>
+    {% else %}
+        <p>not logged </p>
+    {% endif %}
 {% endblock %}
 

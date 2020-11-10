@@ -15,6 +15,7 @@ class LoginController{
 
         // the template path is the relative file path from `templates/`
         $twig->display('login.html.twig', [
+            'customerId' => $_SESSION["id"],
             'test' => 'test',
             'notifications' => "notification",
         ]);

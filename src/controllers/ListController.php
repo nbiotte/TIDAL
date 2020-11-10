@@ -24,8 +24,9 @@ class ListController{
 
         // the template path is the relative file path from `templates/`
         $twig->display('list.html.twig', [
+            'customerId' => $_SESSION["id"],
             'products' => $products,
-            'slider_filter' => $sliderFilter,
+            'sliderFilter' => $sliderFilter,
         ]);
     }
 

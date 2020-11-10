@@ -5,6 +5,7 @@ use src\controllers\LoginController;
 use src\repositories\ProductRepository;
 
 session_start();
+if (!isset($_SESSION["id"])) $_SESSION["id"] = 0;
 
 ini_set('diplay_errors', 1);
 ini_set('display_startup_errors',1);
@@ -15,5 +16,8 @@ require_once('../vendor/autoload.php');
 
 if(!isset($_GET['page'])) new ListController();
 elseif ($_GET['page']==='connexion') new LoginController();
+elseif ($_GET['page']==='deconnexion'){
+    session_destroy(); 
+} 
 
 ?>
