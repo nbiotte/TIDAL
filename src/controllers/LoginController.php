@@ -2,6 +2,10 @@
 
 namespace src\controllers;
 
+require_once(__DIR__.'/../services/MarketService.php');
+
+use src\services\MarketService;
+
 class LoginController{
 
     public function __construct(){
@@ -10,13 +14,17 @@ class LoginController{
         $twig = new \Twig\Environment($loader);
 
 
-        //$result = $service->getBasket();
 
         // the template path is the relative file path from `templates/`
         $twig->display('login.html.twig', [
             'test' => 'test',
             'notifications' => "notification",
         ]);
+    }
+
+    public function login()
+    {
+        echo "hello";
     }
 }
 

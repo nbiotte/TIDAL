@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-        
+<form action="controllers\LoginController.php\login()" method="POST">
+    <input type="text" name ="username" id="username" required >
+    <input type="password" name ="pwd" id="input_pwd" required >
+    <input type="submit" value="Connexion" />
+</form>
 {% endblock %}
