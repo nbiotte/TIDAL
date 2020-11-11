@@ -27,7 +27,9 @@ class LoginController{
     {
         $data = $_POST;
         $connexionService = new ConnexionService();
-        $customer = $connexionService->getCustomer(['id','firstname', 'familyname', 'address'], ["username = '".$data['username']."'"]);
+        //print_r($_POST);
+        $pwd = md5($data['pwd']);
+        $customer = $connexionService->getCustomer(['id','firstname', 'familyname', 'address'], ["username = '".$data['username']."' AND password = '$pwd'" ]);
         if (!empty($customer)) 
             $_SESSION["id"]=$customer[0][0];
             $_SESSION["firstname"]=$customer[0][1];
