@@ -1,11 +1,22 @@
 <?php
+/**
+ * ListController.php.
+ *
+ * @author BIOTTE Nathan
+ *
+ * @version 1.0
+ */
 
 namespace src\controllers;
 
-
-
 use src\services\MarketService;
 
+/**
+ * ListController.
+ *
+ * This class ensures the display of list.hmtl.twig
+ * 
+ */
 class ListController{
 
     public function __construct(){

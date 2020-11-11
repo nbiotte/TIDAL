@@ -1,9 +1,22 @@
 <?php
+/**
+ * LoginController.php.
+ *
+ * @author BIOTTE Nathan
+ *
+ * @version 1.0
+ */
 
 namespace src\controllers;
 
 use src\services\ConnexionService;
 
+/**
+ * LoginController.
+ *
+ * This class ensures the display of login.hmtl.twig
+ * 
+ */
 class LoginController{
 
     public function __construct(){
@@ -22,7 +35,12 @@ class LoginController{
 
     }
 
-
+    /**
+     * login.
+     *
+     * Function that allows to find the customer who tries to connect and connect him if it's the right id.
+     * 
+     */
     private function login()
     {
         $data = $_POST;

@@ -2,8 +2,8 @@
 
 use src\controllers\ListController;
 use src\controllers\LoginController;
-use src\controllers\MembreController;
-use src\repositories\ProductRepository;
+use src\controllers\MemberController;
+use src\controllers\BasketController;
 
 session_start();
 if (!isset($_SESSION["id"])) $_SESSION["id"] = 0;
@@ -16,9 +16,10 @@ require_once('../vendor/autoload.php');
 
 
 if(!isset($_GET['page'])) new ListController();
-elseif ($_GET['page']==='connexion') new LoginController();
-elseif ($_GET['page']==='membre') new MembreController();
-elseif ($_GET['page']==='deconnexion'){
+elseif ($_GET['page']==='connect') new LoginController();
+elseif ($_GET['page']==='member') new MemberController();
+elseif ($_GET['page']==='basket') new BasketController();
+elseif ($_GET['page']==='disconnect'){
     session_destroy(); 
     header("Location: /");
 } 

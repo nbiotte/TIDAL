@@ -23,7 +23,7 @@ body{
     }
     
     .menu-item{
-        background-color:rgba(255, 255, 255, 0.103);
+        background-color:rgb(8, 8, 8);
         text-align: center;
         margin: 10px;
         text-decoration: none;
@@ -46,14 +46,11 @@ body{
     .menu-item-div {
         text-align: center;
         width: 100%;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
     }
     
     .bouton-remonter{
         background-color: black;
-        color: white;
+        color: Black;
         text-align: center;
         width: 20px;
         border: white;
@@ -69,39 +66,42 @@ body{
         background-color: grey;
     }
     
-        /* Fin menu */
+    /* Fin menu */
 
-        .grid-container {
-            display: grid;
-            grid-template-areas: 'header' 'main' 'footer';
-            grid-gap: 10px;
-            background-color: transparent;
-            padding: 10px;
-            width: auto;
-        }
-        
-        .grid-container>div {
-            background-color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            padding: 20px 0;
-            font-size: 10px;
-        }
-        
-        #item-header {
-            grid-area: header;
-            background-color: transparent;
-        }
 
-        #item-main {
-            grid-area: main;
-            margin-top: 5%;
-            margin-left: 8%;
-            margin-right: 8%;
-            background-color: transparent; 
-        }
+    /* Mise en forme */
 
-        #item-footer {
-            grid-area: footer;
-        }
-        
-            /* Fin Mise en forme */
+    .grid-container {
+        display: grid;
+        grid-template-areas: 'header' 'main' 'footer';
+        grid-gap: 10px;
+        background-color: transparent;
+        padding: 10px;
+        width: auto;
+    }
+    
+    .grid-container>div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 10px;
+    }
+    
+    #item-header {
+        grid-area: header;
+        background-color: grey;
+    }
+
+    #item-main {
+        grid-area: main;
+        margin-top: 5%;
+        margin-left: 8%;
+        margin-right: 8%;
+        background-color: transparent; 
+    }
+
+    #item-footer {
+        grid-area: footer;
+    }
+    
+    /* Fin Mise en forme */

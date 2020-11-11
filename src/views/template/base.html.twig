@@ -1,5 +1,5 @@
 {#template/base.html.twig #}
-    <link rel="stylesheet" type="text/css" href="/views/public/css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/views/public/css/style.css">
     <script src="/views/public/js/main.js"></script>
 
 {% block name %}
@@ -10,19 +10,22 @@
 {% block header %}
     <div class="grid-container">
         <div id="item-header">    
-            <a class = "menu-item\" href="/">
-                <div class=\"menu-item-div\" id="Accueil" >Accueil</div>
+            <a class = "menu-item" href="/">
+                <div class="menu-item-div" id="Accueil" >Accueil</div>
             </a>
             {% if customerId != 0 %}
-                <a class = "menu-item\" href="/?page=membre">
-                    <div class="menu-item-div\" id="Membre" >Mon compte</div>
+                <a class = "menu-item" href="/?page=member">
+                    <div class="menu-item-div" id="page_member" >Mon compte</div>
                 </a>
-                <a class = "menu-item\" href="/?page=deconnexion">
-                    <div class="menu-item-div\" id="Accueil" >Deconnexion</div>
+                <a class = "menu-item" href="/?page=basket">
+                    <div class="menu-item-div" id="page_basket" >Mon panier</div>
+                </a>
+                <a class = "menu-item" href="/?page=disconnect">
+                    <div class="menu-item-div" id="page_disconnect" >Deconnexion</div>
                 </a>
             {% else %}
-                <a class = "menu-item\" href="/?page=connexion">
-                    <div class="menu-item-div\" id="Connexion" >Connexion</div>
+                <a class = "menu-item" href="/?page=connect">
+                    <div class="menu-item-div" id="page_connect" >Connexion</div>
                 </a>
             {% endif %}
         </div>
