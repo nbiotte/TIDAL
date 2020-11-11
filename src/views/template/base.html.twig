@@ -10,19 +10,19 @@
 {% block header %}
     <div class="grid-container">
         <div id="item-header">    
-            <a class = \"menu-item\" href="/">
+            <a class = "menu-item\" href="/">
                 <div class=\"menu-item-div\" id="Accueil" >Accueil</div>
             </a>
             {% if customerId != 0 %}
-                <a class = \"menu-item\" href="../Recapitulatif/index.html\">
-                    <div class=\"menu-item-div\" id="Recapitulatif" >Récapitulatif</div>
+                <a class = "menu-item\" href="/?page=membre">
+                    <div class="menu-item-div\" id="Membre" >Mon compte</div>
                 </a>
-                <a class = \"menu-item\" href="/?page=deconnexion">
-                    <div class=\"menu-item-div\" id="Accueil" >Deconnexion</div>
+                <a class = "menu-item\" href="/?page=deconnexion">
+                    <div class="menu-item-div\" id="Accueil" >Deconnexion</div>
                 </a>
             {% else %}
-                <a class = \"menu-item\" href="/?page=connexion">
-                    <div class=\"menu-item-div\" id="Connexion" >Connexion</div>
+                <a class = "menu-item\" href="/?page=connexion">
+                    <div class="menu-item-div\" id="Connexion" >Connexion</div>
                 </a>
             {% endif %}
         </div>

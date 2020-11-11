@@ -27,8 +27,12 @@ class LoginController{
     {
         $data = $_POST;
         $connexionService = new ConnexionService();
-        $customer = $connexionService->getCustomer(['id'], ["username = '".$data['username']."'"]);
-        if (!empty($customer)) $_SESSION["id"]=$customer[0][0];
+        $customer = $connexionService->getCustomer(['id','firstname', 'familyname', 'address'], ["username = '".$data['username']."'"]);
+        if (!empty($customer)) 
+            $_SESSION["id"]=$customer[0][0];
+            $_SESSION["firstname"]=$customer[0][1];
+            $_SESSION["familyname"]=$customer[0][2];
+            $_SESSION["address"]=$customer[0][3];
     }
 }
 
