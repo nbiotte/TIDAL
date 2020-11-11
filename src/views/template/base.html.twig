@@ -8,35 +8,21 @@
 
 
 {% block header %}
-    <div class="grid-container">
-        <div id="item-header">    
-            <a class = "menu-item" href="/">
-                <div class="menu-item-div" id="Accueil" >Accueil</div>
-            </a>
+    <div id="grid_container">
+        <div id="item_header">    
+            <button class="menu_button" onclick="window.location.href='/'">Accueil</button> 
             {% if customerId != 0 %}
-                <a class = "menu-item" href="/?page=member">
-                    <div class="menu-item-div" id="page_member" >Mon compte</div>
-                </a>
-                <a class = "menu-item" href="/?page=basket">
-                    <div class="menu-item-div" id="page_basket" >Mon panier</div>
-                </a>
-                <a class = "menu-item" href="/?page=disconnect">
-                    <div class="menu-item-div" id="page_disconnect" >Deconnexion</div>
-                </a>
+                <button class="menu_button" onclick="window.location.href='/?page=member'">Mon compte</button> 
+                <button class="menu_button" onclick="window.location.href='/?page=basket'">Mon panier</button> 
+                <button class="menu_button" onclick="window.location.href='/?page=disconnect'">Deconnexion</button> 
             {% else %}
-                <a class = "menu-item" href="/?page=connect">
-                    <div class="menu-item-div" id="page_connect" >Connexion</div>
-                </a>
+                <button class="menu_button" onclick="window.location.href='/?page=connect'">Connexion</button> 
             {% endif %}
         </div>
 {% endblock %}
 
-
-
-
-
 {% block body %}
-    <div id="item-main">
+    <div id="item_main">
         {% block content %}
 
         {% endblock %}
@@ -44,14 +30,9 @@
 {% endblock %}
 
 {% block footer %}
-    <div id="item-footer">
+    <div id="item_footer">
         <p>BIOTTE Nathan</p>
         <p>GUINGAND Jules</p>
     </div>
-     {% if customerId != 0 %}
-        <p> logged</p>
-    {% else %}
-        <p>not logged </p>
-    {% endif %}
 {% endblock %}
 

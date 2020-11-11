@@ -22,85 +22,56 @@ body{
         border-radius: 20px;
     }
     
-    .menu-item{
-        background-color:rgb(8, 8, 8);
-        text-align: center;
-        margin: 10px;
-        text-decoration: none;
-        border-radius: 20px;
-        font-size: 100%;
-        display: inline-block;
-        position: relative;
-        min-width: 50px;
-        color: white;
-    }
-    
-    .menu-item:hover{
-        background-color: grey;
-    }
-    
-    #actif {
-        background-color: grey;
-    }
-    
-    .menu-item-div {
-        text-align: center;
-        width: 100%;
-    }
-    
-    .bouton-remonter{
-        background-color: black;
-        color: Black;
-        text-align: center;
-        width: 20px;
-        border: white;
-        border-style: solid;
-        margin-left: 90%;
-        top: 95%;
-        transform: translateY(-95%);
-        position: fixed;
-        cursor: pointer;
-    }
-    
-    .bouton-remonter:hover{
-        background-color: grey;
-    }
-    
     /* Fin menu */
 
+    .menu_button {
+        border-style: solid;
+        border-radius: 20px;
+        width: auto;
+        height: 30px;
+    }
+
+    .menu_button:hover{
+        background-color: grey;
+    }
 
     /* Mise en forme */
 
-    .grid-container {
+    #grid_container {
         display: grid;
         grid-template-areas: 'header' 'main' 'footer';
         grid-gap: 10px;
-        background-color: transparent;
+        background-color: grey;
         padding: 10px;
         width: auto;
     }
     
-    .grid-container>div {
-        background-color: rgba(255, 255, 255, 0.8);
+    #grid_container>div {
+        background-color: white;
         text-align: center;
-        padding: 20px 0;
         font-size: 10px;
     }
     
-    #item-header {
+    #item_header {
         grid-area: header;
+        position: absolute;
+        right:30px;
+        border-style: solid;
+        border-radius: 20px;
+        padding: 10px;
         background-color: grey;
     }
 
-    #item-main {
+    #item_main {
         grid-area: main;
         margin-top: 5%;
         margin-left: 8%;
         margin-right: 8%;
+        padding: 20px 0;
         background-color: transparent; 
     }
 
-    #item-footer {
+    #item_footer {
         grid-area: footer;
     }
     
